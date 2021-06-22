@@ -8,7 +8,7 @@ module.exports = {
 
         const API = new DanBotHosting.Client(client.config.apiKey, client);
  
-        let initalPost = await API.autopost();
+        let initialPost = await API.autopost();
 
         if (initialPost) throw initialPost;
     }
