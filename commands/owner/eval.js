@@ -82,7 +82,7 @@ module.exports = new (require("../../structures/internal/Command"))({
             })()`));
             if (typeof evaled !== "string")
               evaled = require("util").inspect(evaled, { depth: 4 });
-            if (evaled.includes(config.token) || evaled.includes(config.mongouri))
+            if (evaled.includes(config.token))
               return message.channel.sendCustom(
                 "error",
                 "Eval Error.",
