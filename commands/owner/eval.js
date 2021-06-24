@@ -67,7 +67,6 @@ module.exports = new (require("../../structures/internal/Command"))({
           let code = args.map((x) => x);
           code.shift();
           code = code.join(" ");
-          code.replace(/`/g, "");
           try {
             if (!code)
               return message.channel.sendCustom(
