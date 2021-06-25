@@ -14,7 +14,7 @@ module.exports = {
                 name: message.member.displayName
             }
         });
-        if (cmd.ownerOnly && client.config.ownerIds.includes(message.author.id)) return message.channel.sendCustom("error", "OwnerOnly Command!", "The command you're using is ownerOnly!", {
+        if (cmd.ownerOnly && !client.config.ownerIds.includes(message.author.id)) return message.channel.sendCustom("error", "OwnerOnly Command!", "The command you're using is ownerOnly!", {
         footer: {
                 iconURL: message.author.displayAvatarURL(),
                 name: message.member.displayName
