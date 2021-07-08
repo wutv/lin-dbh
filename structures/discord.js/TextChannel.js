@@ -12,8 +12,8 @@ module.exports = {
                 };
                 options["description"] = description;
 
-                const embed = new MessageEmbed(options);
-                const msg = await this.send(embed);
+                const embeds = [new MessageEmbed(options)];
+                const msg = await this.send({ embeds });
                 return msg;
             }
         }
