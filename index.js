@@ -12,7 +12,6 @@ class LinClient extends D.Client {
      */
 
     super({
-      ws: {
         intents: [
           "GUILD_PRESENCES",
           "GUILD_MEMBERS",
@@ -21,7 +20,6 @@ class LinClient extends D.Client {
           "GUILD_MESSAGES",
           "GUILD_MESSAGE_REACTIONS",
         ],
-      },
     });
 
     /**
