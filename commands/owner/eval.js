@@ -41,19 +41,19 @@ module.exports = new (require("../../structures/internal/Command"))({
                 .catch((e) => {
                   return e;
                 });
-              const msg = await message.author.send(
-                new MessageEmbed({
+              const msg = await message.author.send({
+                embeds: [new MessageEmbed({
                   title: "Eval Output.",
                   description: `The output for the eval command was larger than 2032 characters. To check it, click [here](${src.url}) or use the link: ${src.url}.`,
-                })
-              );
+                })]
+              });
               embed.setDescription(
                 `**Output** \n Output is too large! Check your DMs, or click [here](${msg.url}).`
               );
-              return embed;
+              return [embed];
             } else {
               embed.setDescription(`**Output**\n \`\`\`js\n${content}\n\`\`\``);
-              return embed;
+              return [embed];
             }
           }
           const types = ["async", "sync"];
@@ -89,11 +89,11 @@ module.exports = new (require("../../structures/internal/Command"))({
                 "This eval has the bot credentials! Please try without using the bot's credentials."
               );
       
-            const embed = await sendEmbed(evaled, code);
-            return message.channel.send(embed);
+            const embeds = await sendEmbed(evaled, code);
+            return message.channel.send({ embeds });
           } catch (err) {
-            const embed = await sendEmbed(err, code);
-            return message.channel.send(embed);
+            const embeds = await sendEmbed(err, code);
+            return message.channel.send({ embeds });
           }
     }
 })
