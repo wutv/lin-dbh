@@ -79,7 +79,8 @@ start() {
     const DiscordStructures = readdirSync("./structures/discord.js");
     DiscordStructures.forEach(structt => {
         const struct = require(`./structures/discord.js/${structt}`);
-        Structures.extend(struct.name, struct.extend)
+        const baseStructure = require("discord.js")[struct.name];
+        baseStructure.prototype = struct.extend(baseStructure);
     })
     super.login(this.token);
   }
