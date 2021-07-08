@@ -26,14 +26,14 @@ class LinClient extends D.Client {
 
     /**
      * Object with client credentials.
-     * @param {Object}
+     * @type {Object}
     */
 
     this.config = config;
    
     /**
      * Client token.
-     * @param {String}
+     * @type {String}
      */
    
     this.token = token.token;
@@ -54,8 +54,9 @@ class LinClient extends D.Client {
 
     /**
      * Custom winston logger.
-     * @param {Object}
+     * @type {Object}
      */
+    
     this.logger = require("./structures/internal/WinstonLogger.js");
 
   }
