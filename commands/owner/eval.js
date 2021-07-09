@@ -1,6 +1,8 @@
-const sourcebin = require("sourcebin");
-const { MessageEmbed } = require("discord.js");
-const config = client.config;
+const sourcebin = require("sourcebin"),
+      // for eval, import Discord
+      Discord = require("discord.js"),
+      { MessageEmbed } = Discord,
+      config = client.config;
 
 module.exports = new (require("../../structures/internal/Command"))({
     name: "eval",
