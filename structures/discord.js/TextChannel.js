@@ -2,8 +2,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "TextChannel",
     extend(TextChannel) {
-        class LinTextChannel extends TextChannel {
-            async sendCustom(which, title, description, optionsRaw) {
+            TextChannel.prototype.sendCustom = async function (which, title, description, optionsRaw) {
                 if (!["success", "error"].includes(which)) throw new Error("Invalid custom send type provided.");
                 let options = optionsRaw ?? {};
                 options["author"] = {
@@ -16,7 +15,5 @@ module.exports = {
                 const msg = await this.send({ embeds });
                 return msg;
             }
-        }
-        return LinTextChannel;
     }
 }
