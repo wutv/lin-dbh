@@ -80,7 +80,7 @@ start() {
     DiscordStructures.forEach(structt => {
         const struct = require(`./structures/discord.js/${structt}`);
         const baseStructure = require("discord.js")[struct.name];
-        baseStructure.prototype = struct.extend(baseStructure);
+        struct.extend(baseStructure);
     })
     super.login(this.token);
   }
