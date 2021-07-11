@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "danbot-hosting": "^0.1.6",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.0-dev.d6c43a5.1625918569",
     "sourcebin": "^4.2.5",
     "winston": "^3.3.3"
   }
