@@ -1,8 +1,24 @@
 {
+  "name": "lin-bot",
+  "version": "1.0.0",
+  "description": "little lin bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wutv/lin-dbh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wutv/lin-dbh/issues"
+  },
+  "homepage": "https://github.com/wutv/lin-dbh#readme",
   "dependencies": {
-    "danbot-hosting": "^0.1.6",
-    "discord.js": "^13.0.0-dev.d6c43a5.1625918569",
-    "sourcebin": "^4.2.5",
-    "winston": "^3.3.3"
+    "discord.js": "^13.6.0"
   }
 }
